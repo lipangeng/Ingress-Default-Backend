@@ -2,8 +2,8 @@ FROM nginx
 MAINTAINER 李盼庚<lipg@outlook.com>
 
 RUN set -eux ;\
-	sed -i 's/index /#index/g' /etc/nginx/conf.d/default.conf ;\
-	sed -i '/#index /a\        random_index on;' /etc/nginx/conf.d/default.conf ;\
+	sed -i 's/ index / #index/g' /etc/nginx/conf.d/default.conf ;\
+	sed -i '/ #index /a\        random_index on;' /etc/nginx/conf.d/default.conf ;\
 	rm -rfv /usr/share/nginx/html
 
 ADD monochrome.html /usr/share/nginx/html/monochrome.html
